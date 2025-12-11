@@ -13,6 +13,11 @@ const app = express();
 // JSON Middleware
 app.use(express.json());
 
+// Routes
+app.use("/api/courses", require("./src/routes/course.routes"));
+app.use("/api/enrollments", require("./src/routes/enrollment.routes"));
+app.use("/api/users", require("./src/routes/user.routes"));
+
 // Test Route
 app.get("/", (req, res) => {
   res.send("API is running...");
